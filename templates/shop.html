@@ -1,0 +1,49 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+
+    <section class="products">
+        <h1 class="text-center">Our Products</h1>
+        <div class="row">
+
+            <div class="container">
+
+                {% for pro in products %}
+                <div class="col-md-3 col-xs-12">
+                    <div class="product">
+                        <div class="image">
+
+                            <img src="{{ pro.image.url }}" alt="">
+                            <div class="pro-over">
+                                <button type="button" class="btn btn-primary">Like</button>
+                                <button type="button" class="btn btn-warning">Add To Cart <i class="fa fa-cart-arrow-down" aria-hidden="true"></i>
+</button>
+                                <div class="stars text-center">
+                                    <i class="fa fa-star" aria-hidden="true"></i>
+                                    <i class="fa fa-star" aria-hidden="true"></i>
+                                    <i class="fa fa-star" aria-hidden="true"></i>
+                                    <i class="fa fa-star" aria-hidden="true"></i>
+                                    <i class="fa fa-star" aria-hidden="true"></i>
+
+                                </div>
+                            </div>
+                        </div>
+                        <a href="/product/{{ pro.pk }}">
+                        <div class="pro-info">
+                            <h5 class="price">
+   h5 c                         {{ pro.price }}
+                            </h5>
+                            <span>{{ pro.name }}</span>
+                            <p>{{ pro.description|truncatechars:60 }}</p>
+                        </div>
+                                            </a>
+
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+    </section>
+
+{% endblock %}
