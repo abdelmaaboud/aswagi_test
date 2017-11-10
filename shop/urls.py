@@ -5,5 +5,6 @@ urlpatterns = [
     url(r'^$', views.index),
 
     url(r'^(?P<id>[0-9]+)/$', views.shop),
+    url(r'^product/(?P<id>[0-9]+)/$', views.product),
 
 ]

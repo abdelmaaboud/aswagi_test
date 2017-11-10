@@ -1,8 +1,11 @@
 {% extends "base.html" %}
+{% load staticfiles %}
+
+{% block assets %}
+    <link rel="stylesheet" href="{% static 'css/main.css' %}">
+{% endblock %}
 
 {% block content %}
-
-
     <section class="products">
         <h1 class="text-center">Our Products</h1>
         <div class="row">

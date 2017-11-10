@@ -11,3 +11,7 @@ def shop(request,id):
     shop = Shop.objects.get(pk=id)
     products= Product.objects.filter(seller=shop)
     return render(request,"shop.html",{"products":products})
+
+def product(request,id):
+    product = Product.objects.get(pk=id)
+    return render(request,"product.html",{"product":product})

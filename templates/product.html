@@ -1,0 +1,52 @@
+{% extends "base.html" %}
+{% load staticfiles %}
+{% block assets %}
+
+    <link rel="stylesheet" href="{% static 'css/main.css' %}">
+
+
+{% endblock %}
+
+{% block content %}
+<main>
+        <div class="single-product">
+            <div class="container">
+                  <div class="row">
+                    <div class="col-md-4 col-xs-12">
+                        <div class="product-img">
+                            <img class="img-thumbnail" src="{{ product.image.url }}" alt="">
+                        </div>
+                    </div>
+
+                        <div class="product-title">
+                            <h2>{{ product.name }}</h2>
+                        </div>
+                        <!--/.product-title-->
+                        <div class="product-desc">
+                            <div class="rates">
+                                <ul class="list-unstyled">
+                                    <li><i class="fa fa-star"></i></li>
+                                    <li><i class="fa fa-star"></i></li>
+                                    <li><i class="fa fa-star"></i></li>
+                                    <li><i class="fa fa-star"></i></li>
+                                    <li><i class="fa fa-star-o"></i></li>
+                                </ul>
+                            </div>
+                            <h4>Description : </h4>
+                            <p>{{ product.description }}</p>
+                            <div class="price">
+                                <span>{{ product.price }}</span>
+                            </div>
+                            <!--price-->
+                            <button class="btn btn-warning">Add To Cart</button>
+                        </div>
+                        <!--/.product-img-->
+                    </div>
+                </div>
+                <!--/.row-->
+            </div>
+            <!--/.container-->
+        </div>
+        <!--/.single-product-->
+</main>
+{% endblock %}
